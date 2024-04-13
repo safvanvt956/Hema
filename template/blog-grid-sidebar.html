@@ -1,0 +1,207 @@
+{% extends "partail/base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+
+            <!-- Body Container -->
+            <div id="page-content"> 
+                <!--Page Header-->
+                <div class="page-header text-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 d-flex justify-content-between align-items-center">
+                                <div class="page-title"><h1>Blog Grid Sidebar</h1></div>
+                                <!--Breadcrumbs-->
+                                <div class="breadcrumbs"><a href="index-2.html" title="Back to the home page">Home</a><span class="title"><i class="icon anm anm-angle-right-l"></i>Blog</span><span class="main-title fw-bold"><i class="icon anm anm-angle-right-l"></i>Blog Grid Sidebar</span></div>
+                                <!--End Breadcrumbs-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Page Header-->
+
+                <!--Main Content-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-3 blog-sidebar sidebar sidebar-bg">
+                            <!--Sidebar-->
+                            <div class="sidebar-tags sidebar-sticky clearfix">
+                                <!--Category-->
+                                <div class="sidebar-widget clearfix categories">
+                                    <div class="widget-title"><h2>Category</h2></div>
+                                    <div class="widget-content">
+                                        <ul class="sidebar-categories scrollspy clearfix">
+                                            <li class="lvl-1 {% if selected_category == '*' %}active{% endif %}"><a href="?filter=*" class="site-nav lvl-1"  style="color: {% if selected_category == '*' %}red{% endif %};">All <span class="count">({{ all_count }})</span></a></li>                                            
+                                            <li class="lvl-1 {% if selected_category == 'fashion' %}active{% endif %}"><a href="?filter=fashion" class="site-nav lvl-1" style="color: {% if selected_category == 'fashion' %}red{% endif %};">Fashion <span class="count">({{ fashion_count }})</span></a></li>                                            
+                                            <li class="lvl-1 {% if selected_category == 'beauty' %}active{% endif %}"><a href="?filter=beauty" class="site-nav lvl-1" style="color: {% if selected_category == 'beauty' %}red{% endif %};">Beauty <span class="count">({{ beauty_count }})</span></a></li>
+                                            <li class="lvl-1 {% if selected_category == 'accessories' %}active{% endif %}"><a href="?filter=accessories" class="site-nav lvl-1" style="color: {% if selected_category == 'accessories' %}red{% endif %};">Accessories <span class="count">({{ accessories_count }})</span></a></li>
+                                            <li class="lvl-1 {% if selected_category == 'trending' %}active{% endif %}"><a href="?filter=trending" class="site-nav lvl-1" style="color: {% if selected_category == 'trending' %}red{% endif %};">Trending <span class="count">({{ trending_count }})</span></a></li>
+                                            <li class="lvl-1 {% if selected_category == 'life_style' %}active{% endif %}"><a href="?filter=life_style" class="site-nav lvl-1" style="color: {% if selected_category == 'life_style' %}red{% endif %};">Life Style <span class="count">({{ life_count }})</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!--End Category-->
+                                <!--Archive-->
+                                <div class="sidebar-widget clearfix categories">
+                                    <div class="widget-title"><h2>Archive</h2></div>
+                                    <div class="widget-content">
+                                        <ul class="sidebar-categories scrollspy clearfix">
+                                            <li class="lvl-1"><a href="blog-grid-sidebar.html" class="site-nav lvl-1">24 February 2023</a></li>
+                                            <li class="lvl-1"><a href="blog-grid-sidebar.html" class="site-nav lvl-1">31 March 2023</a></li>
+                                            <li class="lvl-1"><a href="blog-grid-sidebar.html" class="site-nav lvl-1">10 April 2023</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!--End Archive-->
+                                <!--Recent Posts-->
+                                <div class="sidebar-widget clearfix">
+                                    <div class="widget-title"><h2>Recent Posts</h2></div>
+                                    {% if blog %}
+                                    <div class="widget-content">
+                                        <div class="list list-sidebar-products">
+                                            {% for post in blog %}
+                                            <div class="mini-list-item d-flex align-items-center w-100 clearfix">
+                                                <div class="mini-image"><a class="item-link" href="}"><img class="featured-image blur-up lazyload" data-src="{{post.image.url}}" src="{{post.image.url}}" alt="blog" width="100" height="100" /></a></div>
+                                                <div class="ms-3 details">
+                                                    <a class="item-title" href="">{{ post.title }}</a>
+                                                    <div class="item-meta opacity-75"><time datetime="{{ post.pub_date }}">{{ post.pub_date}}</time></div>
+
+                                                </div>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    {% else %}
+                                    <p>No Results</p>
+                                    {% endif %}
+                                </div>
+                                
+                                <!--End Recent Posts-->
+                                <!--Popular Tags-->
+                                <div class="sidebar-widget clearfix tags-clouds">
+                                    <div class="widget-title"><h2>Popular Tags</h2></div>
+                                    <div class="widget-content">
+                                        <ul class="tags-list d-flex-wrap">
+                                            <li class="item {% if tag_category == 'man' %}active{% endif %}"><a class="rounded-3" href="?tag=man">Man</a></li>
+                                            <li class="item {% if tag_category == 'shoe' %}active{% endif %}"><a class="rounded-3" href="?tag=shoe">Shoes</a></li>
+                                            <li class="item {% if tag_category == 'beauty' %}active{% endif %}"><a class="rounded-3" href="?tag=beauty">Beauty</a></li>
+                                            <li class="item {% if tag_category == 'woman' %}active{% endif %}"><a class="rounded-3" href="?tag=woman">Woman</a></li>
+                                            <li class="item {% if tag_category == 'work' %}active{% endif %}"><a class="rounded-3" href="?tag=work">Working</a></li>
+                                        </ul>
+                                        
+                                    </div>
+                                </div>
+                                <!--End Popular Tags-->
+                            </div>
+                            <!--End Sidebar-->
+                        </div>
+
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-9 main-col">
+                            <!--Toolbar-->
+                            <div class="toolbar toolbar-wrapper blog-toolbar">
+                                <div class="row align-items-center">
+                                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 text-left filters-toolbar-item d-flex justify-content-center justify-content-sm-start">
+                                        <div class="search-form mb-3 mb-sm-0">
+                                            <form class="d-flex" action="#" >
+                                                <input class="search-input" type="text" name="query" placeholder="Blog search...">
+                                                <button type="submit" class="search-btn"><i class="icon anm anm-search-l"></i></button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 text-right filters-toolbar-item d-flex justify-content-between justify-content-sm-end">
+                                        <div class="filters-item d-flex align-items-center">
+                                            <label for="ShowBy" class="mb-0 me-2">Show:</label>
+                                            <select name="ShowBy" id="ShowBy" class="filters-toolbar-sort">
+                                                <option value="title-ascending" selected="selected">10</option>
+                                                <option>15</option>
+                                                <option>20</option>
+                                                <option>25</option>
+                                                <option>30</option>
+                                            </select>
+                                        </div>
+                                        <div class="filters-item d-flex align-items-center ms-3">
+                                            <label for="SortBy" class="mb-0 me-2">Sort:</label>
+                                            <select name="SortBy" id="SortBy" class="filters-toolbar-sort">
+                                                <option value="title-ascending" selected="selected">Featured</option>
+                                                <option>Newest</option>
+                                                <option>Most comments</option>
+                                                <option>Release Date</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End Toolbar-->
+
+                            <!--Blog Grid-->
+                            <div class="blog-grid-view">
+                                <div class="row col-row row-cols-lg-2 row-cols-sm-2 row-cols-1">
+                                    {% for blog_item in blog_items %}
+                                    <div class="blog-item col-item">
+                                        <div class="blog-article zoomscal-hov">
+                                            <div class="blog-img">
+                                            <a class="featured-image rounded-0 zoom-scal" href="{% url 'blog-details' id=blog_item.id %}">
+                                                    <img class="rounded-0 blur-up lazyload" data-src="{{ blog_item.image.url }}" src="{{ blog_item.image.url }}" alt="{{ blog_item.title }}" width="740" height="410" />
+                                                </a>
+                                            </div>
+                                            <div class="blog-content">
+                                                <h2 class="h3"><a href="blog-details.html">{{ blog_item.title }}</a></h2>
+                                                <ul class="publish-detail d-flex-wrap">
+                                                    <li><i class="icon anm anm-user-al"></i> <span class="opacity-75 me-1">Posted by:</span> {{ blog_item.author }}</li>
+                                                    {% comment %} <li><i class="icon anm anm-clock-r"></i> <time datetime="{{ blog_item.publish_date|date:'Y-m-d' }}">{{ blog_item.publish_date|date:'M d, Y' }}</time></li> {% endcomment %}
+                                                    <li><i class="icon anm anm-clock-r"></i> <time datetime="{{ blog_item.publish_date }}">{{ blog_item.publish_date }}</time></li>
+
+                                                    <li><i class="icon anm anm-comments-l"></i> <a href="#">13 Comments</a></li>
+                                                </ul>
+                                                <p class="content">{{ blog_item.content|truncatechars:100 }}</p>
+                                                <a href="{% url 'blog-details' id=blog_item.id %}" class="btn btn-secondary btn-sm">Read more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% empty %}
+                                    <h2 class="mt-5">Not results</h2>
+                                    {% endfor %}
+                                </div>
+
+                                
+
+                                <!-- Pagination -->
+                                <nav class="clearfix pagination-bottom">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item disabled"><a class="page-link" href="#"><i class="icon anm anm-angle-left-l"></i></a></li>
+                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link dot" href="#">...</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                        <li class="page-item"><a class="page-link" href="#"><i class="icon anm anm-angle-right-l"></i></a></li>
+                                    </ul>
+                                </nav>
+                                <!-- End Pagination -->
+                            </div>
+                            <!--End Blog Grid-->
+                        </div>
+                    </div>
+                </div>
+                <!--End Main Content-->
+            </div>
+            <!-- End Body Container -->
+
+          
+            
+
+            <!--Scoll Top-->
+            <div id="site-scroll"><i class="icon anm anm-arw-up"></i></div>
+            <!--End Scoll Top-->
+
+            <!--MiniCart Drawer-->
+            
+            <!--End MiniCart Drawer-->
+
+
+
+    </body>
+</html>
+
+{% endblock %}

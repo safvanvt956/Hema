@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="description">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Title Of Site -->
+        <title>Shop With Category - Hema Multipurpose eCommerce Bootstrap 5 Html Template</title>
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{% static "assets/images/favicon.png" %}" />
+        <!-- Plugins CSS -->
+        <link rel="stylesheet" href="{% static "assets/css/plugins.css" %}">
+        <!-- Main Style CSS -->
+        <link rel="stylesheet" href="{% static "assets/css/style-min.css" %}">
+        <link rel="stylesheet" href="{% static "assets/css/responsive.css" %}">
+</head>
+<body>
+    <!-- start Marquee Text -->
+    <div class="topbar-slider clearfix">
+        <div class="container-fluid">
+            <div class="marquee-text">
+                <div class="top-info-bar d-flex">
+                    <div class="flex-item center">
+                        <a href="#">
+                            <span> <i class="anm anm-worldwide"></i> BUY ONLINE PICK UP IN STORE</span>
+                            <span> <i class="anm anm-truck-l"></i> FREE WORLDWIDE SHIPPING ON ALL ORDERS ABOVE $100</span>
+                            <span> <i class="anm anm-redo-ar"></i> EXTENDED RETURN UNTIL 30 DAYS</span>
+                        </a>
+                    </div>
+                    <div class="flex-item center">
+                        <a href="#">
+                            <span> <i class="anm anm-worldwide"></i> BUY ONLINE PICK UP IN STORE</span>
+                            <span> <i class="anm anm-truck-l"></i> FREE WORLDWIDE SHIPPING ON ALL ORDERS ABOVE $100</span>
+                            <span> <i class="anm anm-redo-ar"></i> EXTENDED RETURN UNTIL 30 DAYS</span>
+                        </a>
+                    </div>
+                    <div class="flex-item center">
+                        <a href="#">
+                            <span> <i class="anm anm-worldwide"></i> BUY ONLINE PICK UP IN STORE</span>
+                            <span> <i class="anm anm-truck-l"></i> FREE WORLDWIDE SHIPPING ON ALL ORDERS ABOVE $100</span>
+                            <span> <i class="anm anm-redo-ar"></i> EXTENDED RETURN UNTIL 30 DAYS</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--End Marquee Text-->
+    {% include "partail/header.html" %}
+
+    {% block content %}
+        
+    {% endblock  %}
+
+    {% include "partail/footer.html" %}
+
+
+    <!-- Including Jquery/Javascript -->
+    <!-- Plugins JS -->
+    <script src="{% static "assets/js/plugins.js" %}"></script>
+    <!-- Main JS -->
+    <script src="{% static "assets/js/main.js" %}"></script>
+
+
+
+</body>
+</html>

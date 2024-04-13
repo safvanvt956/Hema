@@ -1,0 +1,137 @@
+{% extends "partail/base.html" %}
+{% load static %}
+{% block content %}
+
+            <!-- Body Container -->
+            <div id="page-content"> 
+                <!--Page Header-->
+                <div class="page-header text-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 d-flex justify-content-between align-items-center">
+                                <div class="page-title"><h1>Blog Details</h1></div>
+                                <!--Breadcrumbs-->
+                                <div class="breadcrumbs"><a href="index-2.html" title="Back to the home page">Home</a><span class="title"><i class="icon anm anm-angle-right-l"></i>Blog</span><span class="main-title fw-bold"><i class="icon anm anm-angle-right-l"></i>Blog Details</span></div>
+                                <!--End Breadcrumbs-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Page Header-->
+
+                <!--Main Content-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-3 blog-sidebar sidebar sidebar-bg">
+                            <!--Sidebar-->
+                            <div class="sidebar-tags sidebar-sticky clearfix">
+                                <!--Category-->
+                                <div class="sidebar-widget clearfix categories">
+                                    <div class="widget-title"><h2>Category</h2></div>
+                                    <div class="widget-content">
+                                        <ul class="sidebar-categories scrollspy clearfix">
+                                            <li class="lvl-1 active"><a href="blog-grid-sidebar.html" class="site-nav lvl-1">Fashion <span class="count">4</span></a></li>
+                                            <li class="lvl-1"><a href="blog-grid-sidebar.html" class="site-nav lvl-1">Beauty <span class="count">6</span></a></li>
+                                            <li class="lvl-1"><a href="blog-grid-sidebar.html" class="site-nav lvl-1">Accessories <span class="count">8</span></a></li>
+                                            <li class="lvl-1"><a href="blog-grid-sidebar.html" class="site-nav lvl-1">Trending <span class="count">12</span></a></li>
+                                            <li class="lvl-1"><a href="blog-grid-sidebar.html" class="site-nav lvl-1">Life Style <span class="count">13</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!--End Category-->
+                                <!--Archive-->
+                                <div class="sidebar-widget clearfix categories">
+                                    <div class="widget-title"><h2>Archive</h2></div>
+                                    <div class="widget-content">
+                                        <ul class="sidebar-categories scrollspy clearfix">
+                                            <li class="lvl-1"><a href="blog-grid-sidebar.html" class="site-nav lvl-1">24 February 2023</a></li>
+                                            <li class="lvl-1"><a href="blog-grid-sidebar.html" class="site-nav lvl-1">31 March 2023</a></li>
+                                            <li class="lvl-1"><a href="blog-grid-sidebar.html" class="site-nav lvl-1">10 April 2023</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!--End Archive-->
+                                <!--Recent Posts-->
+                                <div class="sidebar-widget clearfix">
+                                    <div class="widget-title"><h2>Recent Posts</h2></div>
+                                    <div class="widget-content">
+                                        <div class="list list-sidebar-products">
+                                            <div class="mini-list-item d-flex align-items-center w-100 clearfix">
+                                                <div class="mini-image"><a class="item-link" href="blog-details.html"><img class="featured-image blur-up lazyload" data-src="{% static "assets/images/blog/post-img1-100x.jpg" %}" src="{% static "assets/images/blog/post-img1-100x.jpg" %}" alt="blog" width="100" height="100" /></a></div>
+                                                <div class="ms-3 details">
+                                                    <a class="item-title" href="blog-details.html">Gift ideas for everyone</a>
+                                                    <div class="item-meta opacity-75"><time datetime="2023-01-02">Jan 02, 2023</time></div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--End Recent Posts-->
+                                <!--Popular Tags-->
+                                <div class="sidebar-widget clearfix tags-clouds">
+                                    <div class="widget-title"><h2>Popular Tags</h2></div>
+                                    <div class="widget-content">
+                                        <ul class="tags-list d-flex-wrap">
+                                            <li class="item"><a class="rounded-3" href="blog-grid-sidebar.html">Fashion</a></li>
+                                            <li class="item"><a class="rounded-3" href="blog-grid-sidebar.html">Shoes</a></li>
+                                            <li class="item"><a class="rounded-3" href="blog-grid-sidebar.html">Beauty</a></li>
+                                            <li class="item"><a class="rounded-3" href="blog-grid-sidebar.html">Accessories</a></li>
+                                            <li class="item"><a class="rounded-3" href="blog-grid-sidebar.html">Trending</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!--End Popular Tags-->
+                            </div>
+                            <!--End Sidebar-->
+                        </div>
+
+                        <!-- Blog Content-->
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-9 main-col">
+                            <div class="blog-article"> 
+                                <div class="blog-img mb-3">
+                                    <img class="rounded-0 blur-up lazyload" data-src="{{ blog_item.image.url }}" src="{{ blog_item.image.url }}" alt="{{ blog_item.title }}" width="1200" height="700" />
+                                </div>
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <h2 class="h1">{{ blog_item.title }}</h2>
+                                    <ul class="publish-detail d-flex-wrap">                      
+                                        <li><i class="icon anm anm-user-al"></i> <span class="opacity-75 me-1">Posted by:</span> User</li>
+                                        <li><i class="icon anm anm-clock-r"></i> <time datetime="2023-01-02">Jan 02, 2023</time></li>
+                                        <li><i class="icon anm anm-comments-l"></i> <a href="#">2 Comments</a></li>
+                                        <li><i class="icon anm anm-tag-r"></i><span class="opacity-75">Posted in</span><a class="ms-1" href="#">Accessories</a>,<a class="ms-1" href="#">Fashion</a>,<a class="ms-1" href="#">Bags</a></li>
+                                    </ul>
+                                    <hr />
+                                    <div class="content">
+                                        <p>{{ blog_item.content }}</p>
+                                        
+                                    </div>
+                                    <hr />
+                                   
+                                </div>
+                                <!-- End Blog Content -->
+                            </div>
+                        </div>
+                        <!--End Blog Content-->
+                    </div>
+                </div>
+                <!--End Main Content-->
+            </div>
+            <!-- End Body Container -->
+
+            <!--Footer-->
+            
+
+            <!--Scoll Top-->
+            <div id="site-scroll"><i class="icon anm anm-arw-up"></i></div>
+            <!--End Scoll Top-->
+
+            <!--MiniCart Drawer-->
+            
+            <!--End MiniCart Drawer-->
+
+
+    </body>
+</html>
+
+{% endblock %}
